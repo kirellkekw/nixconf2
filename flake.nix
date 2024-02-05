@@ -37,15 +37,15 @@
           ./configuration.nix
           ./hardware-configuration.nix
           inputs.home-manager.nixosModules.home-manager
-
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.kirell = {...}: {
-              imports = [
-                ./home.nix
-                # inputs.commiepenguin.hmModules.neovim
-              ];
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.kirell = {...}: {
+                imports = [
+                  ./home.nix
+                ];
+              };
             };
           }
         ];
